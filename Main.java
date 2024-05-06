@@ -7,9 +7,10 @@ public class Main {
 
         // set up the positions
         char [] pos = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
-        // check turn
+        //  turn variable
         char turn = 'X';
         int symbol;
+        int round = 1;
 
         while (true) {
             // print layout
@@ -49,6 +50,12 @@ public class Main {
                 turn = 'X';
             }
 
+            // check how many rounds have past to avoid infinite loop after filling all positions
+            round++;
+            if (round > 9) {
+                System.out.println("It's a draw.");
+                break;
+            }
         }
     }
 }
